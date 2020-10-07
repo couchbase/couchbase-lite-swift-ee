@@ -1,3 +1,4 @@
 # couchbase-lite-swift-ee
 
-Repository for sharing the swift packages
+Repository for hosting Swift package for Couchbase Lite Swift Enterprise Edition
+

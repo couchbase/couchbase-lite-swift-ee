@@ -4,7 +4,7 @@ Repository for hosting Swift package for Couchbase Lite Swift Enterprise Edition
 
 
 ## Usage 
-For your host app to use the CouchbaseLiteSwift, 
+Adding CouchbaseLiteSwift dependency to your Parent swift package.
 
 1. Add the CouchbaseLiteSwift package as dependency: 
 ```
@@ -18,16 +18,16 @@ dependencies: [
 2. Add the dependent package product name, to the target: 
 ```
 targets: [
-     .target(name: "HostApp",
+     .target(name: "ParentPackage",
              dependencies: ["CouchbaseLiteSwift"]),
     ]
 
 ```
-3. Import CouchbaseLiteSwift, and use it. 
+3. Import CouchbaseLiteSwift, and use it: 
 ```
 import CouchbaseLiteSwift 
 
-class HostAppSomeClass {
+class ParentPackageSomeClass {
     func someFunction() {
         let db = try! Database(name: "testdb")
         print(">> opening the db: \(db.name)")
@@ -43,11 +43,11 @@ class HostAppSomeClass {
 import PackageDescription
 
 let package = Package(
-    name: "HostApp",
+    name: "ParentPackage",
     products: [
         .library(
-            name: "HostApp",
-            targets: ["HostApp"]),
+            name: "ParentPackage",
+            targets: ["ParentPackage"]),
     ],
     dependencies: [
         .package(name: "CouchbaseLiteSwift",
@@ -55,11 +55,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "HostApp",
+            name: "ParentPackage",
             dependencies: ["CouchbaseLiteSwift"]),
         .testTarget(
-            name: "HostAppTests",
-            dependencies: ["HostApp"]),
+            name: "ParentPackageTests",
+            dependencies: ["ParentPackage"]),
     ]
 )
 ```

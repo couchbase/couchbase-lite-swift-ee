@@ -3,7 +3,7 @@
 Repository for hosting Swift package for Couchbase Lite Swift Enterprise Edition
 
 
-## 1. Add CouchbaseLiteSwift to Swift Package
+## Case 1. Including Couchbase Lite to an existing swift package
 Adding CouchbaseLiteSwift dependency to your Parent swift package.
 
 1. Add the CouchbaseLiteSwift package as dependency: 
@@ -64,7 +64,7 @@ let package = Package(
 )
 ```
 
-## 2. Add CouchbaseLiteSwift to Project
+## Case 2.  Including Couchbase Lite directly to your app project
 
 Add CouchbaseLiteSwift to your HostApp
 

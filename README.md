@@ -2,6 +2,8 @@
 
 Repository for hosting Swift package for Couchbase Lite Swift Enterprise Edition
 
+## Requirements
+- Xcode 12+
 
 ## Case 1. Including Couchbase Lite to an existing swift package
 Adding CouchbaseLiteSwift dependency to your Parent swift package.

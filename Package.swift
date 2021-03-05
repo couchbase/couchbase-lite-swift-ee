@@ -19,7 +19,7 @@ let package = Package(
         ),
         .testTarget(
             name: "CouchbaseLiteSwiftTests",
-            dependencies: ["CouchbaseLiteSwift"]),   
+            dependencies: ["CouchbaseLiteSwift"])  
         )
     ]
 )

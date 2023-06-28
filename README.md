@@ -2,9 +2,6 @@
 
 Repository for hosting Swift package for Couchbase Lite Swift Enterprise Edition
 
-## Requirements
-- Xcode 12+
-
 ## Case 1. Including Couchbase Lite to an existing swift package
 Adding CouchbaseLiteSwift dependency to your Parent swift package.
 
@@ -13,7 +10,7 @@ Adding CouchbaseLiteSwift dependency to your Parent swift package.
 dependencies: [
         .package(name: "CouchbaseLiteSwift",
                  url: "https://github.com/couchbase/couchbase-lite-swift-ee.git", 
-                 from: "3.0.2"),
+                 from: "3.0.12"),
     ],
 ```
 
@@ -53,7 +50,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "CouchbaseLiteSwift",
-                 url: "https://github.com/couchbase/couchbase-lite-swift-ee.git", from: "3.0.2"),
+                 url: "https://github.com/couchbase/couchbase-lite-swift-ee.git", from: "3.0.12"),
     ],
     targets: [
         .target(

@@ -30,4 +30,4 @@ jobs:
         git clone https://github.com/couchbaselabs/couchbase-lite-ios-release-verify.git
     - name: Validate
       run: |
-        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -ee -v $VERSION
+        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -ee

@@ -27,7 +27,8 @@ jobs:
         echo "VERSION=$VERSION" >> $GITHUB_ENV
     - name: Checkout couchbase-lite-ios-release-verify
       run: |   
-        git clone https://github.com/couchbaselabs/couchbase-lite-ios-release-verify.git
+        git clone -b fix/new-release https://github.com/couchbaselabs/couchbase-lite-ios-release-verify.git
     - name: Validate
       run: |
-        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -ee
+        branch=${GITHUB_REF#refs/heads/}
+        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -b branch -ee

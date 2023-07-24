@@ -21,14 +21,9 @@ jobs:
     - uses: swift-actions/setup-swift@v1.23.0
       with:
         swift-version: ${{ matrix.swift }} 
-    - name: Set CBL Version
-      run: |
-        export VERSION=$(awk -F'/' '/url:/{print $6}' Package.swift | cut -d'_' -f3)
-        echo "VERSION=$VERSION" >> $GITHUB_ENV
     - name: Checkout couchbase-lite-ios-release-verify
       run: |   
         git clone -b fix/new-release https://github.com/couchbaselabs/couchbase-lite-ios-release-verify.git
     - name: Validate
       run: |
-        branch=${GITHUB_REF#refs/heads/}
-        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -b branch -ee
+        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -b ${{ github.head_ref }} -ee

@@ -1,25 +1,46 @@
-name: Swift
+name: Swift Package
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: '**'
 
 jobs:
-  build:
-    name: Swift ${{ matrix.swift }}
-    strategy:
-      matrix:
-        swift: ["5.3", "5.3.1", "5.3.2", "5.4", "5.4.2", "5.5", "5.8"]
+  build-5_7:
+    name: Swift 5.7
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v2
+    - uses: webfactory/ssh-agent@v0.7.0
       with:
-        swift-version: ${{ matrix.swift }}
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
-
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          log-public-key: false
+    - name: Setup Swift 5.7
+      uses: swift-actions/setup-swift@v1.23.0
+      with:
+        swift-version: "5.7" 
+    - name: Checkout couchbase-lite-ios-release-verify
+      run: |   
+        git clone -b release/lithium https://github.com/couchbaselabs/couchbase-lite-ios-release-verify.git
+    - name: Validate
+      run: |
+        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -b ${{ github.head_ref }} -ee
+  
+  build-5_8:
+    name: Swift 5.8
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: webfactory/ssh-agent@v0.7.0
+      with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          log-public-key: false
+    - name: Setup Swift 5.8
+      uses: swift-actions/setup-swift@v1.23.0
+      with:
+        swift-version: "5.8" 
+    - name: Checkout couchbase-lite-ios-release-verify
+      run: |   
+        git clone -b release/lithium https://github.com/couchbaselabs/couchbase-lite-ios-release-verify.git
+    - name: Validate
+      run: |
+        ./couchbase-lite-ios-release-verify/Scripts/verify_spm.sh -b ${{ github.head_ref }} -ee

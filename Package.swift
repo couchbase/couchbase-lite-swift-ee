@@ -14,8 +14,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "CouchbaseLiteSwift",
-            url: "https://packages.couchbase.com/releases/couchbase-lite-ios/4.0.0/couchbase-lite-swift_xc_enterprise_4.0.0.zip",
-            checksum: "03fe05249bb8362dd2d648facec9eccc0a0445af3cead20e6207e73bd7f7806d"
+            url: "https://packages.couchbase.com/releases/couchbase-lite-ios/4.0.1/couchbase-lite-swift_xc_enterprise_4.0.1.zip",
+            checksum: "6d7a5a6134629e56faed45caa5d55989fb5c3c102e7d60069aef421412d7e694"
         )
     ]
 )

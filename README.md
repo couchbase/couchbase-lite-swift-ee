@@ -1,5 +1,7 @@
 # CouchbaseLiteSwift-EE
 
+![Latest release](https://img.shields.io/github/v/release/couchbase/couchbase-lite-swift-ee)
+
 Repository for hosting Swift package for Couchbase Lite Swift Enterprise Edition
 
 ## Case 1. Including Couchbase Lite to an existing swift package
@@ -9,8 +11,8 @@ Adding CouchbaseLiteSwift dependency to your Parent swift package.
 ```
 dependencies: [
         .package(name: "CouchbaseLiteSwift",
-                 url: "https://github.com/couchbase/couchbase-lite-swift-ee.git", 
-                 from: "4.0.1"),
+                 url: "https://github.com/couchbase/couchbase-lite-swift-ee.git",
+                 from: "4.0.0"),
     ],
 ```
 
@@ -51,7 +53,7 @@ let package = Package(
     dependencies: [
         .package(name: "CouchbaseLiteSwift",
                  url: "https://github.com/couchbase/couchbase-lite-swift-ee.git",
-                 from: "4.0.1"),
+                 from: "4.0.0"),
     ],
     targets: [
         .target(

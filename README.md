@@ -12,7 +12,7 @@ Adding CouchbaseLiteSwift dependency to your Parent swift package.
 dependencies: [
         .package(name: "CouchbaseLiteSwift",
                  url: "https://github.com/couchbase/couchbase-lite-swift-ee.git",
-                 from: "4.0.0"),
+                 from: "4.1.2"),
     ],
 ```
 
@@ -53,7 +53,7 @@ let package = Package(
     dependencies: [
         .package(name: "CouchbaseLiteSwift",
                  url: "https://github.com/couchbase/couchbase-lite-swift-ee.git",
-                 from: "4.0.0"),
+                 from: "4.1.2"),
     ],
     targets: [
         .target(
